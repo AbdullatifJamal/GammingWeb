@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-dag@0.8.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-drag@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-zoom@3"></script>
+    <script src="java.js"></script>
+    <title>FuAIS Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="test.css"> <!-- Link to your custom styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+
+    <!-- Navbar / mobile screen menu  -->
+    <nav class="navbar navbar-expand-xl bg-transparent">
+        <div class="container-fluid">
+            <div class="header__logo">
+                <a href="https://fuais.com/">
+                    <img class="AIimage" src="nn.png">
+                </a>
+            </div>
+            <button class="navbar-toggler" style="background-color: #720455;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#navbarNav" aria-controls="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel"
+                style="background-color: #030637;">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="navbarNavLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" data-aos="fade-right">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="test.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Courses">Our Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Footer">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Image with Responsive Columns -->
+    <section style="position: relative;">
+        <div class="container-fluid p-0">
+            <img src="Resources/622227fd2ce3cc0455a88166_blog-gamedev-fullsize.png"
+                class="CoverImage w-100 animate__animated animate__fadeIn" data-aos="fade-down">
+
+            <div class="image-text top-50 start-50 translate-middle text-center">
+                <h1 class="TextOverImage display-3 mb-3 animate__animated animate__bounceInDown">Dive into
+                    games development with Unreal Engine</h1>
+                <h1 class="textOverImage2 display-3 mb-3 animate__animated animate__bounceInUp">Discover
+                    the thrill of creating your own games - no prior experience required</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- About us Section -->
+    <section style=" background-color: rgb(17, 1, 11); padding: 50px;" data-aos="fade-in" id="About">
+        <div class="containerAbout container text-center text-white">
+            <h2 class="SecondSectionh2 text-center text-white" style="margin-bottom: 40px;">About Us</h2>
+            <p class="lead">
+                <span style="font-size: larger;">FuAIS</span> is an ambitious company based in Amman, Jordan.
+                Our expertise is in web and app development but we also have experience in emerging technology sectors
+                such as IoT, And Games Development. Through the diverse skill-set of our team, we can
+                deliver dynamic and innovative solutions to meet your needs. The comprehensive platform that we provide
+                will give you control, and help you on your path to success.
+                <span style="font-size: Larger;"><br>Our Diverstiy Has Reached The Gaiming Industry And We Are Happy To
+                    Introduce Our Brand-New Games Development Course </span>
+            </p>
+            <hr>
+
+            <a href="#CoursesBegin" class="btn btn-primary" style="margin-top: 40px;">Explore Our Brand-New Course</a>
+        </div>
+    </section>
+    
+    
+    <!-- Meet The Team Section -->
+    <section style="margin-bottom: 170px; margin-top: 150px;">
+        <div class="TeamContainer container text-center">
+            <h3 class="TeamHeading text-center text-white" data-aos="fade-right"> Meet The Team</h3>
+            <div class="team-cards">
+                <div class="team-card" data-aos="fade-right">
+                    <img src="Resources/Instagram icon.jpg" alt="Team Member 1">
+                    <h3>Eng:</h3>
+                    <h3>Yazan A.</h3>
+                    <p>Game Programmer</p>
+                </div>
+                <div class="team-card" data-aos="fade-right">
+                    <img src="Resources/icon.jpg" alt="Team Member 2">
+                    <h3>Eng:</h3>
+                    <h3>Mohammad Y.</h3>
+                    <p>Game Designer</p>
+                </div>
+                <div class="team-card" data-aos="fade-right">
+                    <img src="Resources/icon.jpg" alt="Team Member 2">
+                    <h3>Eng:</h3>
+                    <h3>Abdullatif J.</h3>
+                    <p>Ai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section>
+        <h1 class="Courseh1" id="CoursesBegin"
+            style="align-items: center; align-content: center; text-align: center; position: relative; margin-top: 100px; font-weight:bold; color: aliceblue; margin-bottom: 20px;">
+            What You Will Learn In This Course</h1>
+        <div class="wrapper" data-aos="fade-right">
+            <div class="containerC container" id="Courses">
+                <input type="radio" name="slide" id="c1" checked>
+                <label for="c1" class="card">
+                    <div class="row">
+                        <div class="icon">1</div>
+                        <div class="description">
+                            <h4 class="bigh4">Introduction to Unreal Engine and Game Development</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c2">
+                <label for="c2" class="card">
+                    <div class="row">
+                        <div class="icon">2</div>
+                        <div class="description">
+                            <h4>Unreal Engine Essentials</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c3">
+                <label for="c3" class="card">
+                    <div class="row">
+                        <div class="icon">3</div>
+                        <div class="description">
+                            <h4>Blueprint Visual Scripting</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c4">
+                <label for="c4" class="card">
+                    <div class="row">
+                        <div class="icon">4</div>
+                        <div class="description">
+                            <h4>User Interface (UI) and Menus</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c5">
+                <label for="c5" class="card">
+                    <div class="row">
+                        <div class="icon">5</div>
+                        <div class="description">
+                            <h4>Introduction to Animation</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c6">
+                <label for="c6" class="card">
+                    <div class="row">
+                        <div class="icon">6</div>
+                        <div class="description">
+                            <h4 class="Medh4">Introduction to Physics and Interactivity</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c7">
+                <label for="c7" class="card">
+                    <div class="row">
+                        <div class="icon">7</div>
+                        <div class="description">
+                            <h4 class="Medh4">Project Work and Troubleshooting</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c8">
+                <label for="c8" class="card">
+                    <div class="row">
+                        <div class="icon">8</div>
+                        <div class="description">
+                            <h4>Final Project and Showcase</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="container" style="margin-bottom: 11px;">
+        <a href="https://wa.me/+962797570333" class="CoursesButton">
+            <button class="CoursesButton" type="button">Enroll Now!</button>
+        </a>
+    </div>
+
+    <hr style="color: white;">
+
+    <!-- Why Unreal, Why Us Section -->
+    <section class="text-white text-center">
+        <div class="WhyUsContainer Container">
+            <h2 class="WhyUsHeading">Why Us? And Why Unreal Engine?</h2>
+            <div class="row myrow">
+                <div class="col-6 mycol" data-aos="fade-right">
+                    <div class="PicAndPar">
+                        <img src="Resources/UnrealEngine3.png">
+                        <p class="pin">
+                            Unreal Engine is One of The most Powerfull Open-Source Engines That is Widely Used Now In
+                            the
+                            Gaming Industry, but Not Just Games,
+                            Unreal Engine Also Excells at Other Categories Like FilmMaking, Manufactring etc..
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="PicAndPar" data-aos="fade-right">
+                        <img src="Resources/pexels-fauxels-3184418.jpg" alt="Image 2">
+                        <p class="pin">
+                            Our Talented Team Has Almost 5 Years Of Experience In Developing Games Using Unreal Engine,
+                            And One Of The Few Experts At Developing Games In Jordan that can deliver
+                            High Skill Training To Students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr style="color: #ffffff;">
+
+
+
+
+
+
+
+
+
+
+    <!-- #Hardware Requirements for Unreal Engine-->
+    <section style="margin-top: 40px;">
+        <div class="mycontainer container-fluid">
+            <h2 class="Tableh2 text-center mt-4" data-aos="fade-down">Hardware Requirements For Unreal Engine</h2>
+
+            <div class="unreal-table table-responsive" data-aos="fade-down" data-aos-easing="ease-out-cubic"
+                data-aos-duration="800">
+                <table class="table table-bordered" data-aos="fade-down">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Component</th>
+                            <th scope="col">Minimum</th>
+                            <th scope="col text-center">Recommended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processor</td>
+                            <td>Quad-core Intel or AMD, 2.5 GHz or faster</td>
+                            <td>8-core Intel or AMD, 3.0 GHz or faster</td>
+                        </tr>
+                        <tr>
+                            <td>Operating System</td>
+                            <td>Windows 10 64-bit</td>
+                            <td>Windows 10 64-bit or higher</td>
+                        </tr>
+                        <tr>
+                            <td>Graphics Card</td>
+                            <td>NVIDIA GeForce GTX 670 or AMD Radeon HD 7970</td>
+                            <td>NVIDIA GeForce RTX 2060 or higher</td>
+                        </tr>
+                        <tr>
+                            <td>Memory</td>
+                            <td>8 GB</td>
+                            <td>16 GB or Higher</td>
+                        </tr>
+                        <tr>
+                            <td>RHI Version</td>
+                            <td>DirectX 11: latest Drivers</td>
+                            <td>DirectX 12: latest Drivers </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="container-fluid py-3 bg-dark text-white">
+        <div class="container" id="Footer">
+            <div class="row footer-content">
+                <div class="col-lg-4 col-md-6 mb-4 footer-section">
+                    <h5>Opening Hours</h5>
+                    <p>Saturady - Thursday: 10am - 4pm</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 footer-section">
+                    <h5>Location</h5>
+                    <p>Amman, Khalda , Al Bashiti Circle</p>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4 footer-section">
+                    <h5>Social Media</h5>
+                    <div class="social-media">
+                        <ul>
+                            <li><a href="https://www.facebook.com/fu.ais.56?mibextid=LQQJ4d" class="social-icon"><svg
+                                        xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+
+                                        <path
+                                            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
+                                        </path>
+                                    </svg></a></li>
+                            <li><a href="https://twitter.com/FUA_IS" class="social-icon"><svg
+                                        xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+
+                                        <path
+                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                        </path>
+                                    </svg></a></li>
+                            <li><a href="https://www.linkedin.com/in/future-advanced-co-b4a535254?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app"
+                                    class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                        viewBox="0 0 448 512">
+
+                                        <path
+                                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                                        </path>
+                                    </svg></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Future Advanced Internet Solutions. All rights reserved.</p>
+    </footer>
+
+    <!-- Rest of your content goes here -->
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var offcanvasElement = document.getElementById('navbarNav');
+            var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+            // Toggle off-canvas menu on button click
+            $('.navbar-toggler').on('click', function () {
+                if (offcanvasElement.classList.contains('show')) {
+                    offcanvas.hide();
+                } else {
+                    offcanvas.show();
+                }
+            });
+
+            // Close off-canvas menu when a link is clicked and scroll to the section
+            $('.offcanvas-body a').on('click', function (e) {
+                e.preventDefault(); // Prevent the default behavior of anchor links
+
+                var targetSection = $(this).attr('href');
+                offcanvas.hide();
+
+                // Scroll to the target section smoothly
+                $('html, body').animate({
+                    scrollTop: $(targetSection).offset().top
+                }, 400); // Set the animation duration (in milliseconds)
+            });
+        });
+    </script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+</body>
+
+</html>
